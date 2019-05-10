@@ -9,6 +9,6 @@ cc.game.on(cc.game.EVENT_ENGINE_INITED, () => {
     // // cc.PhysicsManager.DrawBits.e_aabbBit |
     // cc.PhysicsManager.DrawBits.e_jointBit |
     // cc.PhysicsManager.DrawBits.e_shapeBit
-    // ;
+    ;
 });
 

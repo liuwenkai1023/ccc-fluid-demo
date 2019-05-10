@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "e14b7688-e9da-429b-9db6-ac2d40b6d206",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "googlelogo_color_272x92dp": {
+      "ver": "1.0.3",
+      "uuid": "661f6ee0-12a1-4def-8a84-343b1247b62c",
+      "rawTextureUuid": "e14b7688-e9da-429b-9db6-ac2d40b6d206",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -2,
+      "offsetY": 2.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 540,
+      "height": 179,
+      "rawWidth": 544,
+      "rawHeight": 184,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

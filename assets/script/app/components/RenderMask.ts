@@ -37,9 +37,12 @@ export default class RenderMask extends cc.Component {
         if (this.sprite) {
             this.sprite.node.active = true;
             this.sprite.spriteFrame = new cc.SpriteFrame(this.renderTexture);
-        } else {
+            // this.sprite.spriteFrame.srcBlendFactor = cc.macro.BlendFactor.ONE;
+        } 
+        if(this.mask) {
             this.mask.node.active = true;
             this.mask.spriteFrame = new cc.SpriteFrame(this.renderTexture);
+            this.mask.spriteFrame.srcBlendFactor = cc.macro.BlendFactor.ONE;
         }
     }
 

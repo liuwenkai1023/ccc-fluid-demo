@@ -1,11 +1,11 @@
-import { ShaderCustomMaterial } from "../../base/extension/shader/CustomMaterial";
 import { ShaderManager, ShaderType } from "../../base/extension/shader/ShaderManager";
+import { ShaderCustomMaterial } from "../../base/extension/shader/ShaderCustomMaterial";
 
 
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export class TestUI extends cc.Component {
+export class MetaballsShader extends cc.Component {
 
     @property(cc.Sprite)
     private sprite: cc.Sprite = null;
@@ -15,6 +15,7 @@ export class TestUI extends cc.Component {
 
     start() {
         this.mat = ShaderManager.instance().setShader(this.sprite, ShaderType.MetaBalls);
+        
     }
 
 

@@ -31,29 +31,8 @@ export class ShaderLib {
      */
     public init() {
         this.addShader(new shaders.Default());
-        this.addShader(new shaders.Banish());
-        this.addShader(new shaders.Blur());
-        this.addShader(new shaders.Dissolve());
-        this.addShader(new shaders.Fluxay());
-        this.addShader(new shaders.FluxaySuper());
-        this.addShader(new shaders.Frozen());
-        this.addShader(new shaders.GaussBlurs());
-        this.addShader(new shaders.Glowing());
-        this.addShader(new shaders.Gray());
-        this.addShader(new shaders.Ice());
-        this.addShader(new shaders.Invisible());
-        this.addShader(new shaders.Mirror());
-        this.addShader(new shaders.Mosaic());
-        this.addShader(new shaders.Outline());
-        this.addShader(new shaders.Overlay());
-        this.addShader(new shaders.Poison());
-        this.addShader(new shaders.RadialBlur());
-        this.addShader(new shaders.RainShader());
-        this.addShader(new shaders.Stone());
-        this.addShader(new shaders.Vanish());
-        this.addShader(new shaders.Water());
-        this.addShader(new shaders.WaveShader());
         this.addShader(new shaders.MetaBalls());
+        this.addShader(new shaders.CustomMask());
     }
 
 

@@ -1,15 +1,15 @@
 {
   "ver": "2.2.0",
-  "uuid": "ddb92f0e-bd0a-49f0-9b07-183edae3833e",
+  "uuid": "5f51057e-26ab-46a0-be74-3be559960ba4",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "premultiplyAlpha": false,
   "subMetas": {
-    "ball2": {
+    "ball2原图": {
       "ver": "1.0.3",
-      "uuid": "37762a8c-f009-415d-9fcf-d68777987de3",
-      "rawTextureUuid": "ddb92f0e-bd0a-49f0-9b07-183edae3833e",
+      "uuid": "8be348dc-6baa-4dfb-9fe8-827c417ec282",
+      "rawTextureUuid": "5f51057e-26ab-46a0-be74-3be559960ba4",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

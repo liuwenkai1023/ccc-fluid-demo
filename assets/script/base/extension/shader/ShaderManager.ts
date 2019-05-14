@@ -1,32 +1,11 @@
 import { ShaderLib } from "./ShaderLib";
 import { SpriteHook } from "./SpriteHook";
-import { ShaderCustomMaterial } from "./CustomMaterial";
+import { ShaderCustomMaterial } from "./ShaderCustomMaterial";
 
 export enum ShaderType {
     Default,
-    Banish,
-    Blur,
-    Dissolve,
-    Fluxay,
-    FluxaySuper,
-    Frozen,
-    GaussBlurs,
-    Glowing,
-    Gray,
-    Ice,
-    Invisible,
-    Mirror,
-    Mosaic,
+    CustomMask,
     MetaBalls,
-    Outline,
-    Overlay,
-    Poison,
-    RadialBlur,
-    RainShader,
-    Stone,
-    Vanish,
-    Water,
-    WaveShader
 }
 
 export class ShaderManager {

@@ -21,9 +21,6 @@ export class Default extends Shader {
         c.g = gg * 1.2;
         c.b = gg * 0.8;
         c.a *= (gg + 0.1);
-        if(c.r + c.g + c.b + c.a<=1.0){
-            c.a = 0;
-        }
         gl_FragColor = c;
     }
     `;

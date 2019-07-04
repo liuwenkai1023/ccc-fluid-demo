@@ -6,10 +6,7 @@ export class CustomMask extends Shader {
 
     public name = "CustomMask";
 
-    public params = [
-        { name: 'resolution', type: this.renderer.PARAM_FLOAT3 },
-        { name: 'metaballs', type: this.renderer.PARAM_FLOAT },
-    ];
+    public params = [];
 
     public defines = [];
 

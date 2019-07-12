@@ -30,15 +30,15 @@ export default class RenderMask extends cc.Component {
         this.renderTexture = new cc.RenderTexture();
         this.renderTexture.initWithSize(cc.winSize.width, cc.winSize.height);
         this.camera.targetTexture = this.renderTexture;
-        this.renderTexture['_premultiplyAlpha'] = true;
+        // this.renderTexture['_premultiplyAlpha'] = true;
     }
 
     start() {
         if (this.sprite) {
             this.sprite.node.active = true;
             this.sprite.spriteFrame = new cc.SpriteFrame(this.renderTexture);
-        } 
-        if(this.mask) {
+            this.sprite.setState(0);
+        } else if (this.mask) {
             this.mask.node.active = true;
             this.mask.spriteFrame = new cc.SpriteFrame(this.renderTexture);
         }

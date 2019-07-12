@@ -19,8 +19,10 @@ export class CustomMask extends Shader {
         if(c.a > 0.925) {
             c.a = 1.0;
         }
-        else{
-            c.a = 0.0;
+        else if(c.a > 0.90) {
+            c.a = 0.2;
+        }else{
+            c.a = 0.0; 
         }
         gl_FragColor = c;
     }

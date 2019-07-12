@@ -1,4 +1,5 @@
 import { ShaderType, ShaderManager } from "./extension/shader/ShaderManager";
+import SingletonFactory from "./extension/shader/SingleFactory";
 
 const { ccclass, property, disallowMultiple, requireComponent, executeInEditMode } = cc._decorator;
 
@@ -26,7 +27,7 @@ export default class BaseShaderSprite extends cc.Component {
     }
 
     private applyShaderSettings() {
-        ShaderManager.instance().setShader(this.sprite, this._shader);
+        SingletonFactory.getInstance(ShaderManager).setShader(this.sprite, this._shader);
     }
 
     protected onDestroy() {

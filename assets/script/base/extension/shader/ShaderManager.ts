@@ -1,6 +1,7 @@
 import { ShaderLib } from "./ShaderLib";
 import { SpriteHook } from "./SpriteHook";
-import { ShaderCustomMaterial } from "./ShaderCustomMaterial";
+import { ShaderCustomMaterial } from "./CustomMaterial";
+import SingletonFactory from "./SingleFactory";
 
 export enum ShaderType {
     Default,
@@ -9,33 +10,38 @@ export enum ShaderType {
 }
 
 export class ShaderManager {
-    private static _instance: ShaderManager;
-    private constructor() {
+    // private static _instance: ShaderManager;
+    constructor() {
         SpriteHook.init();
     }
 
-    public static instance() {
-        if (!this._instance) {
-            this._instance = new ShaderManager();
-        }
-        return this._instance;
-    }
+    // public static getInstance() {
+    //     if (!this._instance) {
+    //         this._instance = new ShaderManager();
+    //     }
+    //     return this._instance;
+    // }
 
     public setShader(_sprite: cc.Sprite, _shader: ShaderType, _handler?: { (mat: ShaderCustomMaterial) } | void) {
+        // console.log(`【${_sprite.node.name}】->[setShader]->${ShaderType[_shader]}`);
+        if (!_sprite) return;
         if (_shader == ShaderType.Default) {
             _sprite.setState(0);
             return;
         }
+
         let shaderName = ShaderType[_shader];
-        let shader = ShaderLib.instance().getShader(shaderName);
-        let sprite = <any>_sprite;
-        let mat: ShaderCustomMaterial = sprite.getMaterial(shaderName);
+        let shader = SingletonFactory.getInstance(ShaderLib).getShader(shaderName);
+        let sprite: any = <any>_sprite;
+        let mat: ShaderCustomMaterial = sprite.getCustomMaterial(shaderName);
+
         if (!mat) {
             mat = new ShaderCustomMaterial(shader.name, shader.params, shader.defines);
-            sprite.setMaterial(shaderName, mat);
+            sprite.setCustomMaterial(shaderName, mat);
             mat.texture = _sprite.spriteFrame.getTexture();
         }
-        sprite.activateMaterial(shaderName);
+
+        sprite.activateCustomMaterial(shaderName);
         mat.texture.update();
         let scale = this.convertTotalScale(sprite.node);
         mat.setParamValue("resolution", new cc.Vec3(sprite.node.width * scale.x, sprite.node.width * scale.y));

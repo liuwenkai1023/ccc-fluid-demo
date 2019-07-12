@@ -9,20 +9,11 @@ export interface ShaderMap { [key: string]: Shader }
 
 export class ShaderLib {
 
-    private static _instance: ShaderLib;
     private _shaders: ShaderMap = {};
 
 
-    private constructor() {
+    constructor() {
         this.init();
-    }
-
-
-    public static instance() {
-        if (!this._instance) {
-            this._instance = new ShaderLib();
-        }
-        return this._instance;
     }
 
 

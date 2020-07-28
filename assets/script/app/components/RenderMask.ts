@@ -11,7 +11,7 @@
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class RenderMask extends cc.Component {
 
     @property(cc.Camera)
     camera: cc.Camera = null;
@@ -30,14 +30,15 @@ export default class NewClass extends cc.Component {
         this.renderTexture = new cc.RenderTexture();
         this.renderTexture.initWithSize(cc.winSize.width, cc.winSize.height);
         this.camera.targetTexture = this.renderTexture;
-        this.renderTexture['_premultiplyAlpha'] = true;
+        // this.renderTexture['_premultiplyAlpha'] = true;
     }
 
     start() {
         if (this.sprite) {
             this.sprite.node.active = true;
             this.sprite.spriteFrame = new cc.SpriteFrame(this.renderTexture);
-        } else {
+            this.sprite.setState(0);
+        } else if (this.mask) {
             this.mask.node.active = true;
             this.mask.spriteFrame = new cc.SpriteFrame(this.renderTexture);
         }
